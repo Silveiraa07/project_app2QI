@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:qi_project_schedule/screens/contacts/contacts_page.dart';
 import 'package:qi_project_schedule/screens/create_contacts/create_contacts_page.dart';
+import 'package:qi_project_schedule/screens/edit_contact/edit_contact_page.dart';
+import 'package:qi_project_schedule/screens/view_contact/view_contact_page.dart';
 import 'package:qi_project_schedule/theme.dart';
 
 void main() {
@@ -20,6 +22,8 @@ class MainApp extends StatelessWidget {
       routes: {
         '/contacts': (context) => ContactsPage(),
         '/create': (context) => CreateContactsPage(),
+        '/edit': (context) => EditContactPage(),
+        '/view': (context) => ViewContactPage()
       },
     );
   }
