@@ -4,7 +4,12 @@ class CardCreate extends StatelessWidget {
   final IconData icon;
   final String labelText;
   final String hintText;
-  const CardCreate({super.key, required this.icon, required this.labelText, required this.hintText});
+  const CardCreate(
+    {super.key, 
+    required this.icon, 
+    required this.labelText, 
+    required this.hintText}
+  );
 
   @override
   Widget build(BuildContext context) {

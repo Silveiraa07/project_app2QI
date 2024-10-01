@@ -36,7 +36,7 @@ class EditContactPage extends StatelessWidget {
                           controller: _nameController,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'O campo nome não pode ficar vazio';
+                              return 'O campo de nome não pode ficar vazio';
                             }
                             return null;
                           },
@@ -46,18 +46,36 @@ class EditContactPage extends StatelessWidget {
                           labelText: "Number of the contact",
                           hintText: "Enter the number here...",
                           controller: _numberController,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'O campo de número não poide ficar vazio';
+                            }
+                            return null;
+                          },
                         ),
                         CardCreate2(
                           icon: Icons.mail,
                           labelText: "Email of the contact",
                           hintText: "Enter the email here...",
                           controller: _gmailController,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'O campo de email não pode ficar vazio';
+                            }
+                            return null;
+                          },
                         ),
                         CardCreate2(
                           icon: Icons.mood,
                           labelText: "Nickname of the contact",
                           hintText: "Enter the nickname here...",
                           controller: _moodController,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'O campo de apelido não pode ficar vazio';
+                            }
+                            return null;
+                          },
                         ),
                       ],
                     ),
