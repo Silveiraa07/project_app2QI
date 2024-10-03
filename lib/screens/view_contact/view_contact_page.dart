@@ -1,6 +1,8 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:qi_project_schedule/model/contact.dart';
+import 'package:qi_project_schedule/repository/contact_repository.dart';
 import 'package:qi_project_schedule/screens/view_contact/components/icons_beaut.dart';
 
 class ViewContactPage extends StatelessWidget {
@@ -8,7 +10,7 @@ class ViewContactPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final args = ModalRoute.of(context)!.settings.arguments as Map;
+    final contact = ModalRoute.of(context)!.settings.arguments as Contact;
 
     return Scaffold(
         appBar: AppBar(
@@ -25,15 +27,18 @@ class ViewContactPage extends StatelessWidget {
                   children: [
                     Column(
                       children: [
-                        IconsBeayt(icon: Icons.person, text: args['name']),
-                        IconsBeayt(icon: Icons.phone, text: args['number']),
-                        IconsBeayt(icon: Icons.email, text: args['gmail']),
-                        IconsBeayt(icon: Icons.mood, text: args['mood'])
+                        IconsBeayt(icon: Icons.person, text: contact.name),
+                        IconsBeayt(icon: Icons.phone, text: contact.number),
+                        IconsBeayt(icon: Icons.email, text: contact.email),
+                        IconsBeayt(icon: Icons.mood, text: contact.mood)
                       ],
                     ),
                     SizedBox(height: 244),
                     FilledButton.icon(
-                      onPressed: () {},
+                      onPressed: () {
+                        var repository = ContactRepository();
+                        repository.delete(contact.id!);
+                      },
                       label: Text("Delete the contact"),
                       icon: Icon(Icons.delete),
                       style: FilledButton.styleFrom(

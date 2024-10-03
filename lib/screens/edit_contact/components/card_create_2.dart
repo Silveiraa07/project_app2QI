@@ -29,14 +29,15 @@ class CardCreate2 extends StatelessWidget {
             ),
             SizedBox(width: 16),
             Expanded(
-                child: TextFormField(
-              validator: validator,
-              controller: controller,
-              decoration: InputDecoration(
-                labelText: labelText,
-                hintText: hintText,
-              ),
-            )),
+              child: TextFormField(
+                validator: validator,
+                controller: controller,
+                decoration: InputDecoration(
+                  labelText: labelText,
+                  hintText: hintText,
+                ),
+              )
+            ),
           ],
         ),
       ),
